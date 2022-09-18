@@ -131,7 +131,7 @@ function buildCharts(sample) {
     // 4. Create the trace for the gauge chart.
     var gaugeData = [{
       domain: {x: [0,1], y: [0,1]},
-      value: washFreq,
+      value: wfreq,
       type: 'indicator',
       mode: 'gauge+number',
       title: { text: "<b>Belly Button Washing Frequency</b><br># of Scrubs per Week" },
