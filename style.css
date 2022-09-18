@@ -1,0 +1,19 @@
+.jumbotron {
+    background-image: url(https://cdn.wallpapersafari.com/10/5/YyVPzt.jpg);
+    background-size: cover;
+    height: 100%;
+    color: white;
+}
+
+body {
+    background-color: lightgrey;
+  }
+
+div {
+    background-color: white;
+    color: black;
+  }
+
+.col-sm-10 {
+    justify-content: center
+}
