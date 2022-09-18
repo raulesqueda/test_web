@@ -130,7 +130,6 @@ function buildCharts(sample) {
 
     // 4. Create the trace for the gauge chart.
     // Create washreq variable
-    var metadata = data.metadata;
     var metaArray = metadata.filter(sampleObj => sampleObj.id == sample);  
     var meta = metaArray[0];
     var washFreq = meta.wfreq;
@@ -158,7 +157,7 @@ function buildCharts(sample) {
       width: 450,
       height: 400,
       margin: { t: 25, r: 15, l: 15, b: 25 },
-      font: { color: "darkblue", family: "verdana" }
+      font: { color: "darkblue", family: "arial" }
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
