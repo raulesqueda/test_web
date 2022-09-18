@@ -132,11 +132,12 @@ function buildCharts(sample) {
     // Create washreq variable
     var metadata = data.metadata;
     var metaArray = metadata.filter(sampleObj => sampleObj.id == sample);  
+    var meta = metaArray[0];
     var washFreq = meta.wfreq;
 
     var gaugeData = [{
       domain: {x: [0,1], y: [0,1]},
-      value: washfreq,
+      value: washFreq,
       type: "indicator",
       mode: "gauge+number",
       title: { text: "<b>Belly Button Washing Frequency</b><br># of Scrubs per Week" },
@@ -153,11 +154,14 @@ function buildCharts(sample) {
     }];
     
     // 5. Create the layout for the gauge chart.
-    var gaugeLayout = {
-      width: 600, height: 450, margin: {t: 0, b: 0}
+    var gaugeLayout = { 
+      width: 450,
+      height: 400,
+      margin: { t: 25, r: 15, l: 15, b: 25 },
+      font: { color: "darkblue", family: "verdana" }
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", [gaugeData], gaugeLayout);
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout);
   });
 }
