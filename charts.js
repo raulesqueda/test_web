@@ -74,7 +74,7 @@ function buildCharts(sample) {
     var otu_labels = result.otu_labels;
     var sample_values = result.sample_values;
     // For gauge
-    var washFreq = meta.wfreq;
+    var washFreq = parseFloat(meta.wfreq);
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
