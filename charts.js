@@ -129,9 +129,14 @@ function buildCharts(sample) {
     Plotly.newPlot("bubble",bubbleData,bubbleLayout); 
 
     // 4. Create the trace for the gauge chart.
+    // Create washreq variable
+    var metadata = data.metadata;
+    var metaArray = metadata.filter(sampleObj => sampleObj.id == sample);  
+    var washFreq = meta.wfreq;
+
     var gaugeData = [{
       domain: {x: [0,1], y: [0,1]},
-      value: wfreq,
+      value: washfreq,
       type: "indicator",
       mode: "gauge+number",
       title: { text: "<b>Belly Button Washing Frequency</b><br># of Scrubs per Week" },
