@@ -6,20 +6,24 @@ menu.addEventListener('click',function(){
     menuLinks.classList.toggle('active');
 })
 
-$(document).ready(function(){
-    $("#table_id").DataTable({
-        ajax: {
-            url:"2csvjson.json",
-            dataSrc: ""
-        },
-        columns:[
-            {"data":"col_name"},
-            {"data":"mun_code"},
-            {"data":"prom_valor_unitario_suelo"},
-            {"data":"latitud"},
-            {"data":"longitud"},
-            {"data":"alcaldia"},
-            {"data":"estado"}
-        ]
-    });
+fetch("results2.json")
+.then(function(response){
+   return response.json();
+})
+.then(function(results){
+   let placeholder = document.querySelector("#data-output");
+   let out = "";
+   for(let results of results){
+      out += `
+         <tr>
+            <td>${results.nombre_col}'> </td>
+            <td>${results.num_code}</td>
+            <td>${results.prom_valor_unitario_suelo}</td>
+            <td>${results.valor_unitario_pred}</td>
+            <td>${results.cambio_porcentual}</td>
+         </tr>
+      `;
+   }
+ 
+   placeholder.innerHTML = out;
 });
